@@ -16,7 +16,7 @@ public class Server {
     private Queue<Request> requestQueue = new LinkedList<>();
     private TimeQuant tq;
     private Request currentRQ;
-    private ServerStatus status = ServerStatus.AVALIBLE;
+    private ServerStatus status = ServerStatus.AVAILABLE;
     private TimeValueGenerator gaussian;
     private TimeValueGenerator expanential;
     private long currentProcessTime = 0;
@@ -42,13 +42,13 @@ public class Server {
             // no current request processing or server is busy with request
             currentRQ = requestQueue.poll();
             if (currentRQ != null){
-                status = ServerStatus.UNAVALIBLE;
+                status = ServerStatus.UNAVAILABLE;
                 currentRQ.setDequeueTime(tq.getCurrentTime());
-                ServerStatus status = currentRQ.getQueueTime() == tq.getCurrentTime() ? ServerStatus.AVALIBLE : ServerStatus.UNAVALIBLE;
+                ServerStatus status = currentRQ.getQueueTime() == tq.getCurrentTime() ? ServerStatus.AVAILABLE : ServerStatus.UNAVAILABLE;
                 currentRQ.setServerStatus(status);
                 results.add(currentRQ);
             } else {
-                status = ServerStatus.AVALIBLE;
+                status = ServerStatus.AVAILABLE;
             }
         }
     }

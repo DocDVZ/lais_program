@@ -65,7 +65,7 @@ public class Main {
         }
 
         // Processing requests left in queue
-        while (server.getStatus().equals(ServerStatus.UNAVALIBLE)){
+        while (server.getStatus().equals(ServerStatus.UNAVAILABLE)){
             server.doProcessTurn();
             tq.next();
         }
