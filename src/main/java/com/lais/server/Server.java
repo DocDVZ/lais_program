@@ -47,6 +47,9 @@ public class Server {
                 ServerStatus status = currentRQ.getQueueTime() == tq.getCurrentTime() ? ServerStatus.AVAILABLE : ServerStatus.UNAVAILABLE;
                 currentRQ.setServerStatus(status);
                 results.add(currentRQ);
+                if (currentRQ.getProcessingTime()==0){
+                    doProcessTurn();
+                }
             } else {
                 status = ServerStatus.AVAILABLE;
             }

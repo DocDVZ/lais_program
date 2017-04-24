@@ -72,8 +72,8 @@ public class Main {
 
         // Printing results to standard output
         List<Request> results = server.getResults();
-        System.out.println(String.format("%-5s", "№") + String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
-                "StreamType", "Queue time", "Next ERLANG", "Next PUASSON", "Time finished", "Server status", "Queue size", "Time in queue"));
+        System.out.println(String.format("%-5s", "№") + String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
+                "StreamType", "Queue time", "Next ERLANG", "Next PUASSON", "Time finished", "Server status", "Queue size", "Time in queue", "Processing time"));
         for (int i=0; i<results.size(); i++){
             System.out.println(String.format("%-5s", i+1) + results.get(i));
         }

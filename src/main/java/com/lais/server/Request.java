@@ -22,7 +22,7 @@ public class Request {
 
     @Override
     public String toString(){
-        return String.format(" %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s", streamType, queueTime, nextErlang, nextPuasson, dequeueTime+processingTime, serverStatus, queueSize, dequeueTime-queueTime);
+        return String.format(" %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s", streamType, queueTime, nextErlang, nextPuasson, dequeueTime+processingTime, serverStatus, queueSize, dequeueTime-queueTime, processingTime);
     }
 
     public StreamType getStreamType() {
