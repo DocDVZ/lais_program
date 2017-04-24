@@ -9,18 +9,20 @@ import java.util.Random;
  */
 public class PuassonStream {
 
-    private double lambda;
-    private final Random random = new Random();
+    protected double lambda;
+    protected StreamType streamType;
+    protected final Random random = new Random();
 
 
     public PuassonStream(double lambda){
         this.lambda = lambda;
+        this.streamType = StreamType.PUASSON;
     }
 
     public Request generateRequest(){
         if (random.nextInt(100)<lambda*100){
             Request rq = new Request();
-            rq.setStreamType(StreamType.PUASSON);
+            rq.setStreamType(streamType);
             return rq;
         } else {
             return null;

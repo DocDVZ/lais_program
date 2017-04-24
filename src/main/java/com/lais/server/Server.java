@@ -1,6 +1,7 @@
 package com.lais.server;
 
 import com.lais.streams.StreamType;
+import com.lais.valuegenerators.TimeValueGenerator;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -14,6 +15,9 @@ public class Server {
     private TimeQuant tq;
     private Request currentRQ;
     private ServerStatus status = ServerStatus.AVAILIBLE;
+    private TimeValueGenerator gaussian;
+    private TimeValueGenerator expanential;
+
 
     public Server(TimeQuant tq){
         this.tq = tq;
@@ -21,7 +25,7 @@ public class Server {
 
     public void processRequest(Request rq){
         rq.setQueueTime(tq.getCurrentTime());
-        int processingTime = generateProcessingTime(rq.getStreamType());
+        long processingTime = generateProcessingTime(rq.getStreamType());
         // TODO serverStatus
         requestQueue.add(rq);
     }
@@ -30,14 +34,21 @@ public class Server {
 
     }
 
-    private int generateProcessingTime(StreamType st){
+    private long generateProcessingTime(StreamType st){
         if (st.equals(StreamType.PUASSON)){
-            return 0;
+            return gaussian.generateValue();
         } else if(st.equals(StreamType.ERLANG)){
-            return 0;
+            return expanential.generateValue();
         } else {
             throw new IllegalArgumentException("(╯°□°）╯︵ ┻━┻ —");
         }
     }
 
+    public void setGaussian(TimeValueGenerator gaussian) {
+        this.gaussian = gaussian;
+    }
+
+    public void setExpanential(TimeValueGenerator expanential) {
+        this.expanential = expanential;
+    }
 }

@@ -5,5 +5,5 @@ package com.lais.valuegenerators;
  */
 public interface TimeValueGenerator {
 
-    int generateValue();
+    long generateValue();
 }
