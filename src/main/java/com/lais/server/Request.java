@@ -1,4 +1,6 @@
-package myImpl;
+package com.lais.server;
+
+import com.lais.streams.StreamType;
 
 /**
  * Created by DocDVZ on 24.04.2017.

@@ -1,4 +1,4 @@
-package myImpl;
+package com.lais.app;
 
 /**
  * Created by DocDVZ on 23.04.2017.

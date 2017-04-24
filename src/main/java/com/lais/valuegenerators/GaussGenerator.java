@@ -1,4 +1,4 @@
-package myImpl;
+package com.lais.valuegenerators;
 
 /**
  * Created by DocDVZ on 24.04.2017.

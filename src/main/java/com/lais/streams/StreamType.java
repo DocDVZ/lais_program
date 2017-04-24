@@ -1,4 +1,4 @@
-package myImpl;
+package com.lais.streams;
 
 /**
  * Created by DocDVZ on 24.04.2017.

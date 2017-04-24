@@ -1,4 +1,6 @@
-package myImpl;
+package com.lais.streams;
+
+import com.lais.server.Request;
 
 import java.util.Random;
 

@@ -1,4 +1,6 @@
-package myImpl;
+package com.lais.server;
+
+import com.lais.streams.StreamType;
 
 import java.util.LinkedList;
 import java.util.Queue;

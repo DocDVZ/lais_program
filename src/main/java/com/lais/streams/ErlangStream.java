@@ -1,4 +1,6 @@
-package myImpl;
+package com.lais.streams;
+
+import com.lais.server.Request;
 
 /**
  * Created by DocDVZ on 24.04.2017.
