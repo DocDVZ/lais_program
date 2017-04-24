@@ -5,5 +5,16 @@ package com.lais.streams;
  */
 public enum StreamType {
 
-    PUASSON, ERLANG;
+    PUASSON("L2 - PUASSON"), ERLANG("L1 - ERLANG");
+
+    private String name;
+
+    StreamType(String name){
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

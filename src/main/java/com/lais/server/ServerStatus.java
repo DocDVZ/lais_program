@@ -5,6 +5,6 @@ package com.lais.server;
  */
 public enum ServerStatus {
 
-    AVAILIBLE, UNAVAILIBLE;
+    AVALIBLE, UNAVALIBLE;
 
 }
